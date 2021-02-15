@@ -7,8 +7,8 @@ services:
     volumes:
         - static_volume:/home/app/web/project/static
         - media_volume:/home/app/web/project/media
-    ports:
-        - 1125:5000
+    expose:
+        - 5000
     env_file:
       - ./.env.prod
     depends_on:
@@ -26,7 +26,7 @@ services:
       - static_volume:/home/app/web/project/static
       - media_volume:/home/app/web/project/media
     ports:
-      - 1333:80
+      - 1125:80
     depends_on:
       - web      
 
